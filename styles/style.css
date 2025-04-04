@@ -38,12 +38,22 @@ figure {
   margin: 0;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
 .header {
   padding-block-start: 10%;
 }
 
 .heading {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   font-weight: 600;
   line-height: 0.9;
   text-align: center;
@@ -101,6 +111,8 @@ figure {
   position: absolute;
   inline-size: 15px;
   block-size: 15px;
+  inset-block-start: 50%;
+  margin-block-start: 1.5px;
   background-image: url(../images/marker-light.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -142,7 +154,7 @@ figure {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-start: 4.9%;
+  margin-block-start: 7%;
   border: 1px solid var(--text-color);
   aspect-ratio: 4/3;
 }
@@ -183,7 +195,7 @@ figure {
 
 .header__theme-toggler {
   list-style: none;
-  padding: none;
+  padding: 0;
   display: flex;
   gap: 20px;
 }
@@ -200,7 +212,6 @@ figure {
 }
 
 .header__theme-button:hover {
-  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -228,6 +239,14 @@ figure {
 .header__theme-button:focus-visible {
   color: var(--text-color);
   outline: 1px solid var(--text-color);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
 }
 
 .footer {
